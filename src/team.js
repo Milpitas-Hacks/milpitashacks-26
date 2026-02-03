@@ -1,5 +1,3 @@
-import './people.css';
-
 const teamwrapper = document.querySelector(".teamwrapper");
 const teamleadership = document.querySelector(".leadershipclick");
 const teammarketing = document.querySelector(".marketingclick");
@@ -7,6 +5,7 @@ const teamfinance = document.querySelector(".financeclick");
 const teamtech = document.querySelector(".techclick");
 const teamclass = document.querySelectorAll(".teamclass");
 const linkhighlight = document.querySelector(".linkhighlight");
+const judges = document.querySelector(".judge-section");
 
 function untoggle(thing1, thing2, thing3) {
   if (thing1.classList.contains("active")) {
@@ -40,6 +39,9 @@ teamleadership.addEventListener("click", () => {
   removeHighlight();
   linkhighlight.classList.toggle("active1");
   console.log("leadership active");
+  judges.classList.remove("active");
+
+
 });
 teammarketing.addEventListener("click", () => {
   untoggle(teamleadership, teamfinance, teamtech);
@@ -48,6 +50,7 @@ teammarketing.addEventListener("click", () => {
   removeHighlight();
   linkhighlight.classList.toggle("active2");
   console.log("marketing active");
+  judges.classList.remove("active");
 });
 teamfinance.addEventListener("click", () => {
   untoggle(teammarketing, teamleadership, teamtech);
@@ -64,4 +67,6 @@ teamtech.addEventListener("click", () => {
   removeHighlight();
   linkhighlight.classList.toggle("active4");
   console.log("tech active");
+  judges.classList.remove("active");
+
 });

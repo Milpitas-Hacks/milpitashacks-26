@@ -937,8 +937,14 @@ p {
 }
 
 .judge-section{
-  margin-bottom: 15vw;
-  margin-top: -13vw;
+  transform: translateY(20vw);
+  margin-bottom: 45vw;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.judge-section.active{
+    transform: translateY(0px);
 }
 
 .judges-row{
@@ -957,9 +963,6 @@ p {
 
 /* judges */
 
-.judge-section{
-  margin-top: 5vw;
-}
 .judge-card {
   width: 220px;
   height: 280px;
