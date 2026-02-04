@@ -937,14 +937,14 @@ p {
 }
 
 .judge-section{
-  transform: translateY(20vw);
+  transform: translateY(0vw);
   margin-bottom: 45vw;
   transition-property: transform;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
 .judge-section.active{
-    transform: translateY(0px);
+    transform: translateY(20vw);
 }
 
 .judges-row{

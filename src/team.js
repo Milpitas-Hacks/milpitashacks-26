@@ -54,6 +54,7 @@ teammarketing.addEventListener("click", () => {
 });
 teamfinance.addEventListener("click", () => {
   untoggle(teammarketing, teamleadership, teamtech);
+  judges.classList.add("active");
   teamwrapper.style.transform = "translateX(-200vw)";
   teamfinance.classList.toggle("active");
   removeHighlight();
