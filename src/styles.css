@@ -252,6 +252,68 @@ body {
   z-index: 10;
 }
 
+/* mobile version of photo tile */
+@media screen and (max-width: 768px) {
+  /* 1. Flatten the 3D effect so images are visible and clear */
+  .tiles-container-left, 
+  .tiles-container-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotateY(0deg) !important; 
+    width: auto;
+    gap: 0; 
+  }
+
+  .tiles-container-left { left: 5%; }
+  .tiles-container-right { right: 5%; left: auto; }
+
+  /* 2. COLUMN MANAGEMENT: Hide all rows except one per side */
+  /* Left Side: Keeping only Column 2 (the one with the team photos) */
+  .tiles-container-left .row:nth-child(1),
+  .tiles-container-left .row:nth-child(3),
+  .tiles-container-left .row:nth-child(4) {
+    display: none;
+  }
+
+  /* Right Side: Keeping only Column 2 (the one with the crowd photos) */
+  .tiles-container-right .row:nth-child(1),
+  .tiles-container-right .row:nth-child(3),
+  .tiles-container-right .row:nth-child(4) {
+    display: none;
+  }
+
+  /* 3. FORCE IMAGES VISIBLE: Overriding the opacity: 0 */
+  .tile img {
+    opacity: 1 !important;
+  }
+
+  .tile {
+    width: 25vw; /* Sizing the tiles to fit mobile screens */
+    height: 25vw;
+    margin-bottom: 3vw;
+  }
+
+  /* 4. REGISTER BUTTON FIX */
+  /* We must ensure the hero-content sits on top of the tiles and allows clicks */
+  #intro {
+    pointer-events: auto !important; /* Overrides 'none' from your main CSS */
+  }
+
+  .tile-wrapper {
+    pointer-events: none; /* Prevents background tiles from blocking clicks */
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important; /* Ensures the button is clickable */
+  }
+
+  .joinbutton {
+    pointer-events: auto;
+  }
+}
+
 /* Gradient overlay */
 .gradient-overlay {
   position: absolute;
