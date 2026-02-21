@@ -1124,6 +1124,19 @@ p {
   text-shadow: 0 0 20px rgba(159, 179, 255, 0.3);
 }
 
+.sponsorsubhead {
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 5vw;
+}
+.sponsorsubhead a {
+    color: #87a7d3;
+}
+.sponsorsubhead a:hover {
+    color: #ffffff;
+}
+
 .sponsor {
   width: 100%;
   text-align: center;

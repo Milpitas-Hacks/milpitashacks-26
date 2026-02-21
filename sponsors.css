@@ -1,0 +1,152 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0vh;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #192e6d;
+  color: white;
+  align-items: center;
+}
+
+
+/* navbar */
+nav {
+  position: fixed;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  z-index: 10000;
+}
+
+.navlogo {
+  height: 10vw;
+  width: 10vw;
+  position: absolute;
+  top: -1.5vw;
+  left:1vw;
+  z-index: 10000000;
+}
+
+.navlink {
+  padding: 0.7vw 1.2vw;
+  height: 3vw;
+  font-size: 1.4vw;
+  margin-top: 1vw;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 151),
+    white,
+    white,
+    white,
+    rgb(255, 255, 151)
+  );
+  background-size: 0% 0.1em;
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+.navlink:hover {
+  background-size: 80% 0.1em;
+  cursor: pointer;
+}
+
+/* sponsors */
+
+.sponsor-title {
+    margin-top: 10vw;
+    width: 100%;
+    text-align: center;
+}
+
+.sponsortable {
+    max-width: 85vw;
+    margin-left: 7.5vw;
+    display: grid;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
+.table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+
+.item {
+    margin: 0;
+    padding: 1vw;
+    height: 2vw;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vw;
+}
+
+.r2, .r4, .r6, .r8, .r10 {
+    background-color: rgb(142, 142, 142);
+}
+
+.r3, .r5, .r7, .r9 {
+    background-color: rgb(251, 251, 251);
+}
+
+.c1 {
+    font-weight: bold;
+    background-color: rgb(5, 5, 98);
+    color: white;
+    font-size: 1.4vw;
+}
+
+.c2, .r1.c2 {
+    color: #be783b;
+}
+
+.c3, .r1.c3 {
+    color: #bcbcbc;
+}
+
+.c4, .r1.c4 {
+    color: #d9a637;
+}
+
+.c5, .r1.c5 {
+    color: #332495;
+}
+
+.r1 {
+    background-color: white;
+    color: black;
+}
+
+.dot {
+    height: 0.7vw;
+    width: 0.7vw;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.c2 {
+    background-color: #be783b;
+}
+.dot.c3 {
+    background-color: #bcbcbc;
+}
+.dot.c4 {
+    background-color: #d9a637;
+}
+.dot.c5 {
+    background-color: #332495
+;
+}
