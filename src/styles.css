@@ -253,7 +253,7 @@ body {
 }
 
 /* mobile version of photo tile */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   .tiles-container-left, 
   .tiles-container-right {
     position: absolute;
@@ -331,6 +331,11 @@ body {
 
   .joinbutton {
     pointer-events: auto;
+  }
+
+  .judges-row{
+    grid-template-columns: 1fr;
+    gap: 1vw
   }
 }
 
@@ -1039,6 +1044,14 @@ p {
   margin: 0;
 }
 
+/* judges */
+@media screen and (max-width: 768px){
+  .judges-row{
+    grid-template-columns: repeat(1fr);
+    gap: 1vw;
+  }
+}
+
 .judge-section{
   transform: translateY(0vw);
   margin-bottom: 45vw;
@@ -1051,9 +1064,9 @@ p {
 }
 
 .judges-row{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   gap: 3vw;
 }
 
@@ -1064,12 +1077,10 @@ p {
   padding-bottom: 2vw;
 }
 
-/* judges */
-
 .judge-card {
-  width: 220px;
-  height: 280px;
-  perspective: 1000px;
+  width: 18vw;
+  height: 19vw;
+  perspective: 90vw;
 }
 
 .card-inner {
