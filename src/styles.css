@@ -253,8 +253,7 @@ body {
 }
 
 /* mobile version of photo tile */
-@media screen and (max-width: 768px) {
-  /* 1. Flatten the 3D effect so images are visible and clear */
+@media screen and (max-width: 400px) {
   .tiles-container-left, 
   .tiles-container-right {
     position: absolute;
@@ -264,49 +263,70 @@ body {
     gap: 0; 
   }
 
+  /* Slide up */
+  .tiles-container-left .row {
+    animation: slideUp 20s linear infinite;
+  }
+
+  /* Slide down */
+  .tiles-container-right .row {
+    animation: slideDown 20s linear infinite;
+  }
+
+  /* Define  Keyframes */
+  @keyframes slideUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); } /* Moves up half its height */
+  }
+
+  @keyframes slideDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); } /* Starts offset, moves down */
+  }
+
+  .tiles-container-left, .tiles-container-right {
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* Let clicks hit the Register button */
+  }
+
   .tiles-container-left { left: 5%; }
   .tiles-container-right { right: 5%; left: auto; }
 
-  /* 2. COLUMN MANAGEMENT: Hide all rows except one per side */
-  /* Left Side: Keeping only Column 2 (the one with the team photos) */
   .tiles-container-left .row:nth-child(1),
   .tiles-container-left .row:nth-child(3),
   .tiles-container-left .row:nth-child(4) {
     display: none;
   }
 
-  /* Right Side: Keeping only Column 2 (the one with the crowd photos) */
   .tiles-container-right .row:nth-child(1),
   .tiles-container-right .row:nth-child(3),
   .tiles-container-right .row:nth-child(4) {
     display: none;
   }
 
-  /* 3. FORCE IMAGES VISIBLE: Overriding the opacity: 0 */
   .tile img {
     opacity: 1 !important;
   }
 
   .tile {
-    width: 25vw; /* Sizing the tiles to fit mobile screens */
+    width: 25vw; 
     height: 25vw;
     margin-bottom: 3vw;
   }
 
-  /* 4. REGISTER BUTTON FIX */
-  /* We must ensure the hero-content sits on top of the tiles and allows clicks */
   #intro {
-    pointer-events: auto !important; /* Overrides 'none' from your main CSS */
+    pointer-events: auto !important; 
   }
 
   .tile-wrapper {
-    pointer-events: none; /* Prevents background tiles from blocking clicks */
+    pointer-events: none; 
   }
 
   .hero-content {
     position: relative;
     z-index: 10;
-    pointer-events: auto !important; /* Ensures the button is clickable */
+    pointer-events: auto !important; 
   }
 
   .joinbutton {
@@ -671,7 +691,7 @@ p {
   row-gap: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .schedule-card {
     grid-template-columns: 1fr;
     grid-auto-flow: row;
@@ -1122,6 +1142,13 @@ p {
   margin: 0;
   letter-spacing: -1px;
   text-shadow: 0 0 20px rgba(159, 179, 255, 0.3);
+}
+
+.bronze-logo {
+  width: 25vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sponsorsubhead {
