@@ -252,36 +252,56 @@ body {
   z-index: 10;
 }
 
+.mobile-left{
+  display: none;
+}
+
+.mobile-right{
+  display: none;
+}
+
+
 /* mobile version of photo tile */
 @media screen and (max-width: 768px) {
-  .tiles-container-left, 
-  .tiles-container-right {
+  .mobile-right, .mobile-left {
+    display: flex !important; /* Show on mobile */
+    flex-direction: column;
+    gap: 10px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotateY(0deg) !important; 
-    width: auto;
-    gap: 0; 
+    top: 0;
+    width: 25vw;
   }
 
-  /* Slide up */
-  .tiles-container-left .row {
-    animation: slideUp 20s linear infinite;
+  /* Positioning them on the far left and far right */
+  .mobile-left {
+    left: 2vw;
+    animation: scrollUp 15s linear infinite;
   }
 
-  /* Slide down */
-  .tiles-container-right .row {
-    animation: slideDown 20s linear infinite;
+  .mobile-right {
+    right: 2vw;
+    animation: scrollDown 15s linear infinite;
   }
 
-  /* Define  Keyframes */
-  @keyframes slideUp {
+  /* UP Animation */
+  @keyframes scrollUp {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); } /* Moves up half its height */
+    100% { transform: translateY(-50%); } /* Moves up by half its height */
   }
 
-  @keyframes slideDown {
+  /* DOWN Animation */
+  @keyframes scrollDown {
     0% { transform: translateY(-50%); }
-    100% { transform: translateY(0); } /* Starts offset, moves down */
+    100% { transform: translateY(0); }
+  }
+
+  /* Ensure images are visible on mobile */
+  .mobile-right img, .mobile-left img {
+    opacity: 1 !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .tiles-container-left, .tiles-container-right {
@@ -290,19 +310,29 @@ body {
     pointer-events: none; /* Let clicks hit the Register button */
   }
 
-  .tiles-container-left { left: 5%; }
-  .tiles-container-right { right: 5%; left: auto; }
 
   .tiles-container-left .row:nth-child(1),
+  .tiles-container-left .row:nth-child(2),
   .tiles-container-left .row:nth-child(3),
-  .tiles-container-left .row:nth-child(4) {
+  .tiles-container-left .row:nth-child(4),
+  .tiles-container-left .row:nth-child(5) {
     display: none;
   }
 
   .tiles-container-right .row:nth-child(1),
+  .tiles-container-right .row:nth-child(2),
   .tiles-container-right .row:nth-child(3),
-  .tiles-container-right .row:nth-child(4) {
+  .tiles-container-right .row:nth-child(4),
+  .tiles-container-right .row:nth-child(5) {
     display: none;
+  }
+
+  .mobile-right img, .mobile-left img {
+    opacity: 1 !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .tile img {
@@ -327,6 +357,10 @@ body {
     position: relative;
     z-index: 10;
     pointer-events: auto !important; 
+  }
+
+  .hero-content img{
+    width: 75vw;
   }
 
   .joinbutton {
@@ -370,7 +404,7 @@ body {
 } */
 /* join button */
 .joinbutton {
-  width: 30%;
+  width: 10vw;
   height: 4vw;
   background-color: #091538;
   border-radius: 10px;
@@ -407,9 +441,54 @@ body {
 }
 
 /* navbar */
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex !important;
+    justify-content: flex-end !important; /* Pushes the burger to the far right */
+    padding-right: 5vw;
+    height: 7.5vh;
+  }
+
+  /* Hide the horizontal text links from the top bar */
+  .nav-link {
+    font-size: 1.5rem !important; /* vw is too small for mobile text */
+    padding: 20px !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    display: none; 
+    position: fixed;
+    top: 7.5vh; /* Starts exactly under your nav bar */
+    left: 0;
+    height: calc(100vh - 7.5vh);
+    background-color: rgba(15, 30, 56, 0.95); /* Match your theme */
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+  }
+
+  /* Show the links when active */
+  .nav-link.active {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    position: relative;
+    margin-top: 0;
+    z-index: 100000005;
+    pointer-events: auto !important;
+  }
+
+  
+} 
+
 nav {
   position: fixed;
   top: 0;
+  margin-top: 1vw;
   width: 100%;
   height: 7.5vh;
   display: flex;
@@ -420,6 +499,26 @@ nav {
   backdrop-filter: blur(10px);
 }
 
+.menu-toggle {
+  display: none;
+  margin-top: 2vw;
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 2vw;
+  z-index: 10000001;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+  margin: 2px 0;
+}
+
 .navlogo {
   height: 15vh;
   width: auto;
@@ -427,6 +526,10 @@ nav {
   top: -3vh;
   left: 0.5vw;
   z-index: 10000000;
+}
+
+.nav-link {
+  margin-top: 1vw;
 }
 
 .navlink {
