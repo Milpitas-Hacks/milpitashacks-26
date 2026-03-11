@@ -1265,6 +1265,14 @@ p {
   margin-right: auto;
 }
 
+.add-sponsor{
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 2vw;
+}
+
 .sponsorsubhead {
   max-width: 100%;
   text-align: center;
