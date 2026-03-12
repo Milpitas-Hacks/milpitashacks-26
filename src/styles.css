@@ -1270,6 +1270,14 @@ p {
   margin-right: auto;
 }
 
+.silver-logo {
+  width: 25vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
 .add-sponsor{
   width: 100%;
   color: white;
