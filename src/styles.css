@@ -263,6 +263,10 @@ body {
 
 /* mobile version of photo tile */
 @media screen and (max-width: 768px) {
+  .event-date {
+    font-size: clamp(1.4rem, 6.6vw, 2.5rem);
+  }
+
   .mobile-right, .mobile-left {
     display: flex !important; /* Show on mobile */
     flex-direction: column;
@@ -445,6 +449,7 @@ body {
   nav {
     display: flex !important;
     justify-content: flex-end !important; /* Pushes the burger to the far right */
+    align-items: center;
     padding-right: 5vw;
     height: 7.5vh;
   }
@@ -453,10 +458,9 @@ body {
   .nav-link {
     font-size: 1.5rem !important; /* vw is too small for mobile text */
     padding: 20px !important;
-    display: block;
+    display: flex;
     width: 100%;
     text-align: center;
-    display: none; 
     position: fixed;
     top: 7.5vh; /* Starts exactly under your nav bar */
     left: 0;
@@ -467,32 +471,52 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-16px);
+    transition: opacity 220ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1), visibility 220ms ease;
   }
 
   /* Show the links when active */
   .nav-link.active {
-    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .menu-toggle {
     display: flex !important;
     position: relative;
     margin-top: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
     z-index: 100000005;
     pointer-events: auto !important;
   }
 
-  
+  .navlink {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    line-height: 1.2;
+    height: auto;
+    margin-top: 0;
+    padding: 12px 18px;
+  }
 } 
 
 nav {
   position: fixed;
   top: 0;
-  margin-top: 1vw;
+  margin-top: 0;
   width: 100%;
   height: 7.5vh;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: right;
   z-index: 999999;
   background-color: rgba(15, 30, 56, 0.4);
@@ -501,12 +525,14 @@ nav {
 
 .menu-toggle {
   display: none;
-  margin-top: 2vw;
+  margin-top: 0;
   cursor: pointer;
   background: none;
   border: none;
   flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   padding: 2vw;
   z-index: 10000001;
 }
@@ -515,8 +541,8 @@ nav {
   width: 25px;
   height: 3px;
   background-color: white;
-  transition: 0.3s;
-  margin: 2px 0;
+  transition: none;
+  margin: 0;
 }
 
 .navlogo {
@@ -597,6 +623,65 @@ nav {
 .logoimg.linkd{
   width: 4.5vw;
   height: 4.5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-link .navlink {
+    font-size: clamp(1.9rem, 7.8vw, 2.8rem) !important;
+    line-height: 1.2;
+    height: auto;
+    margin-top: 0;
+    padding: 14px 20px;
+  }
+
+  .joinbutton {
+    width: 36vw;
+    height: 12vw;
+    border-radius: 14px;
+    top: 68%;
+  }
+
+  .jointext {
+    font-size: clamp(1rem, 4.8vw, 1.5rem);
+  }
+
+  .logosection {
+    height: 20vw;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-left: 3vw;
+    padding-right: 0;
+    justify-content: flex-start;
+    bottom: 1vh;
+  }
+
+  .logoimg {
+    width: 11vw;
+    height: 11vw;
+    margin: 4vw 2vw;
+  }
+
+  .logoimg.disc {
+    width: 12.5vw;
+    height: 10.5vw;
+  }
+
+  .logoimg.linkd,
+  .logoimg.mail {
+    width: 11.5vw;
+    height: 11.5vw;
+  }
+
+  .logoimg.mail {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .logosection a[href^="mailto:"] {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 /* grid thing */

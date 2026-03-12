@@ -38,10 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuBtn && navDrawer) {
     menuBtn.addEventListener('click', (e) => {
-      // TEMPORARY: If this doesn't show up on the phone, 
-      // an invisible layer is blocking the button.
-      alert("Button Tapped!"); 
-
       menuBtn.classList.toggle('active');
       navDrawer.classList.toggle('active');
     });
