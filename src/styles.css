@@ -1234,26 +1234,10 @@ p {
 
 /* judges */
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 40vw){
   .judges-row{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4vw;
-  }
-  
-  .judge-card {
-    width: 70vw;
-    height: 70vw;
-    max-width: 350px;
-    max-height: 350px;
-    perspective: 90vw;
-    margin: 2vw 0;
-  }
-  
-  .judges-row .judge-card:nth-child(4),
-  .judges-row .judge-card:nth-child(5){
-    transform: translateX(0);
+    grid-template-columns: repeat(1fr);
+    gap: 1vw;
   }
 }
 
@@ -1343,7 +1327,6 @@ p {
   transform: scale(1.1);
   opacity: 0.85;
 }
-
 /* sponsors */
 .thesponsors {
   padding: 10vw;
