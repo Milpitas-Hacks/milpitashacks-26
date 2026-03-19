@@ -1233,10 +1233,27 @@ p {
 }
 
 /* judges */
+
 @media screen and (max-width: 768px){
   .judges-row{
-    grid-template-columns: repeat(1fr);
-    gap: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vw;
+  }
+  
+  .judge-card {
+    width: 70vw;
+    height: 70vw;
+    max-width: 350px;
+    max-height: 350px;
+    perspective: 90vw;
+    margin: 2vw 0;
+  }
+  
+  .judges-row .judge-card:nth-child(4),
+  .judges-row .judge-card:nth-child(5){
+    transform: translateX(0);
   }
 }
 
@@ -1257,11 +1274,11 @@ p {
   justify-items: center;
   gap: 3vw;
 }
+
 .judges-row .judge-card:nth-child(4),
 .judges-row .judge-card:nth-child(5){
   transform: translateX(100%);
 }
-
 
 .judge-title{
   color: white;
