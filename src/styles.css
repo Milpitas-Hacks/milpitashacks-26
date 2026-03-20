@@ -1234,13 +1234,6 @@ p {
 
 /* judges */
 
-@media screen and (max-width: 40vw){
-  .judges-row{
-    grid-template-columns: repeat(1fr);
-    gap: 1vw;
-  }
-}
-
 .judge-section{
   transform: translateY(0vw);
   margin-bottom: 45vw;
@@ -1275,6 +1268,77 @@ p {
   width: 18vw;
   height: 19vw;
   perspective: 90vw;
+  cursor: pointer;
+}
+
+/* Mobile judges section */
+@media screen and (max-width: 768px){
+  .judge-section{
+    margin-bottom: 10vh;
+  }
+
+  .judge-title{
+    font-size: 7vw;
+    padding-bottom: 5vw;
+  }
+
+  .judges-row{
+    grid-template-columns: 1fr;
+    gap: 5vw;
+    padding: 0 5vw;
+  }
+
+  .judges-row .judge-card:nth-child(4),
+  .judges-row .judge-card:nth-child(5){
+    transform: translateX(0);
+  }
+
+  .judge-card {
+    width: 40vw;
+    height: 35vh;
+    perspective: 90vw;
+  }
+
+  .card-front img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .firstname {
+    font-size: 3.5vw;
+    padding: 0.2vw 0;
+    margin: 0;
+  }
+
+  .lastname {
+    font-size: 3.5vw;
+    padding: 0.2vw 0;
+    margin: 0;
+  }
+
+  .position {
+    font-size: 2.2vw;
+    padding: 1vw 0 0 0;
+    margin: 0;
+  }
+
+  .linkedin-link img {
+    width: 6vw;
+    height: 6vw;
+    margin-top: 2vh;
+  }
 }
 
 .card-inner {
@@ -1285,8 +1349,20 @@ p {
   transition: transform 0.6s ease;
 }
 
+/* Desktop: flip on hover */
 .judge-card:hover .card-inner {
   transform: rotateY(180deg);
+}
+
+/* Mobile: flip on tap with .flipped class */
+@media screen and (max-width: 768px) {
+  .judge-card:hover .card-inner {
+    transform: none;
+  }
+  
+  .judge-card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .card-face {
@@ -1316,8 +1392,8 @@ p {
 }
 
 .linkedin-link img {
-  width: 3vw;
-  height: 3vw;
+  width: 6vw;
+  height: 6vw;
   cursor: pointer;
   margin-top: 4vw;
   transition: transform 0.2s ease, opacity 0.2s ease;

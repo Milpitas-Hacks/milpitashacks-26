@@ -71,3 +71,24 @@ teamtech.addEventListener("click", () => {
   judges.classList.remove("active");
 
 });
+
+// Handle judge card flips on mobile
+const judgeCards = document.querySelectorAll(".judge-card");
+const isMobile = () => window.innerWidth <= 768;
+
+judgeCards.forEach(card => {
+  card.addEventListener("click", (e) => {
+    // Only toggle flip on mobile devices
+    if (isMobile()) {
+      e.preventDefault();
+      card.classList.toggle("flipped");
+    }
+  });
+  
+  // Remove flipped class when window resizes to desktop
+  window.addEventListener("resize", () => {
+    if (!isMobile()) {
+      card.classList.remove("flipped");
+    }
+  });
+});
