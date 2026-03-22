@@ -1472,6 +1472,7 @@ p {
 .teamsection {
   margin-top: 10vw;
   margin-bottom: -20vw;
+  overflow-x: hidden;
 }
 
 .teamnavwrapper {
