@@ -1465,10 +1465,24 @@ p {
 .sponsor {
   width: 100%;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2.8rem;
   margin: 2vw 0;
 }
 
+@media (max-width: 768px) {
+  .sponsor {
+    font-size: 2.4rem;
+    margin: 4vw 0;
+  }
+
+  .bronze-logo {
+    width: 55vw;
+  }
+
+  .silver-logo {
+    width: 55vw;
+  }
+}
 /* team */
 
 .teamsection {
