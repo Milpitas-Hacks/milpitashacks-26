@@ -727,7 +727,7 @@ nav {
 }
 
 .title {
-  font-size: 3.5vw;
+  font-size: 3rem;
   font-weight: 800;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -854,10 +854,12 @@ p {
 }
 
 .main-titletwo {
-  transition: transform 1.2s ease, opacity 1.2s ease;
-  transform: translateY(-6vw);
-  opacity: 0;
-  padding-bottom: 2vw;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  color: #ffffff;
+  text-align: center;
 }
 
 
