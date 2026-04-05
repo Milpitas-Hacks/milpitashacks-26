@@ -1180,6 +1180,7 @@ p {
   margin: 0;
   letter-spacing: -1px;
   text-shadow: 0 0 20px rgba(159, 179, 255, 0.3);
+  padding-top: 9vh;
 }
 
 .bronze-logo {
