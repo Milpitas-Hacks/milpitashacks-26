@@ -1165,10 +1165,10 @@ p {
 .thesponsors {
   padding: 10vw;
   max-width: 100%;
-  /* temporary */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2.75rem;
 }
 
 .sponsorshead {
@@ -1183,66 +1183,102 @@ p {
   padding-top: 9vh;
 }
 
-.bronze-logo {
-  width: 25vw;
+.sponsor-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.sponsor-logo-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sponsor-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: clamp(12rem, 22vw, 18rem);
+  height: clamp(5rem, 9vw, 7rem);
+  object-fit: contain;
+}
+
+.logo-1517 {
+  width: clamp(14rem, 26vw, 21rem);
+  height: clamp(5.5rem, 10vw, 7.75rem);
+}
+
+.npo-logo {
+  width: clamp(12rem, 22vw, 18rem);
+}
+
+.bronze-logo {
+  width: clamp(12rem, 22vw, 18rem);
 }
 
 .silver-logo {
-  width: 25vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  align-content: center;
+  width: clamp(12rem, 22vw, 18rem);
 }
 
-.add-sponsor{
+.add-sponsor,
+.sponsor {
   width: 100%;
   color: white;
   text-align: center;
-  font-size: 2vw;
-  margin-top: 2vw;
+  font-size: clamp(2rem, 2.6vw, 2.7rem);
+  margin: 0;
+  font-weight: 700;
 }
 
 .sponsorsubhead {
   max-width: 100%;
   text-align: center;
-  font-size: 1.3rem;
-  margin-top: 5vw;
+  font-size: clamp(1.6rem, 2.1vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(159, 179, 255, 0.3);
+  margin-top: 3.5vw;
 }
 .sponsorsubhead a {
-    color: #87a7d3;
+    color: white;
 }
 .sponsorsubhead a:hover {
-    color: #ffffff;
+    color: #d9e3ff;
 }
 
 .sponsor {
-  width: 100%;
-  text-align: center;
-  font-size: 2.8rem;
-  margin: 2vw 0;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
+  .thesponsors {
+    gap: 2rem;
+  }
+
+  .sponsor-section {
+    gap: 1rem;
+  }
+
+  .sponsor-logo-row {
+    gap: 1rem;
+  }
+
   .sponsor {
-    font-size: 2.4rem;
-    margin: 4vw 0;
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
   }
 
-  .bronze-logo {
-    width: 55vw;
-  }
-
-  .silver-logo {
-    width: 55vw;
-  }
-
-  .add-sponsor {
-    font-size: 2.4rem;
-    margin: 4vw 0;
+  .sponsor-logo {
+    width: clamp(10rem, 55vw, 16rem);
+    height: clamp(4rem, 18vw, 6rem);
   }
 }
 /* team */
