@@ -1269,11 +1269,12 @@ p {
   }
 
   .sponsor-logo-row {
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .sponsor {
-    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    font-size: clamp(2rem, 8vw, 2.75rem);
   }
 
   .sponsor-logo {
