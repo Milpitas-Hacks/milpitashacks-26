@@ -1229,6 +1229,31 @@ p {
   width: clamp(12rem, 22vw, 18rem);
 }
 
+.partner-sponsor {
+  color: #2730a8;
+  font-size: 48px;
+}
+
+.gold-sponsor {
+    color: #b48827;
+    font-size: 48px;
+  }
+
+.silver-sponsor {
+  color: #a09c9c;
+  font-size: 48px;
+}
+
+.bronze-sponsor {
+  color: #99612f;
+  font-size: 48px;
+}
+
+.npo-sponsor {
+  font-size: 48px;
+}
+
+
 .add-sponsor,
 .sponsor {
   width: 100%;
@@ -1281,6 +1306,7 @@ p {
     width: clamp(10rem, 55vw, 16rem);
     height: clamp(4rem, 18vw, 6rem);
   }
+
 }
 /* team */
 
