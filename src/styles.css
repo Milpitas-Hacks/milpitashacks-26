@@ -1292,6 +1292,10 @@ p {
   gap: 1.25rem;
 }
 
+.gold-section {
+  gap: 0.9375rem;
+}
+
 .sponsor-logo-row {
   width: 100%;
   display: flex;
@@ -1329,6 +1333,11 @@ p {
 
 .silver-logo {
   width: clamp(12rem, 22vw, 18rem);
+}
+
+.asus-logo {
+  width: clamp(32rem, 60vw, 48rem);
+  height: clamp(9rem, 16.5vw, 12.75rem);
 }
 
 .partner-sponsor {
