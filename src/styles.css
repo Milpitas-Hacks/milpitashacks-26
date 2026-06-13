@@ -1370,6 +1370,80 @@ p {
     }
     .prize-card:hover .dropdown { display: flex; }
 
+    @media (max-width: 768px) {
+      .prizes-list {
+        grid-template-columns: 1fr;
+        width: min(94vw, 640px);
+        padding: 0;
+        margin: clamp(24px, 6vh, 56px) auto;
+        gap: clamp(10px, 2.2vw, 16px);
+      }
+
+      .prize-card.grand,
+      .prize-card.asus {
+        grid-column: auto;
+      }
+
+      .prize-card {
+        min-height: clamp(112px, 18vh, 180px);
+        border-radius: clamp(10px, 2.8vw, 14px);
+      }
+
+      .card-header {
+        padding: clamp(0.85rem, 2.7vw, 1.15rem) clamp(0.95rem, 3.4vw, 1.35rem);
+        gap: clamp(8px, 2vw, 12px);
+      }
+
+      .prize-icon {
+        font-size: clamp(20px, 6vw, 26px);
+        width: clamp(20px, 6vw, 26px);
+      }
+
+      .prize-label {
+        font-size: clamp(10px, 2.9vw, 12px);
+      }
+
+      .prize-name {
+        font-size: clamp(15px, 4.8vw, 20px);
+      }
+
+      .prize-card .dropdown {
+        display: flex !important;
+        flex-direction: column;
+        gap: clamp(8px, 2vw, 12px);
+        padding: clamp(0.6rem, 2.6vw, 0.95rem) clamp(0.95rem, 3.3vw, 1.3rem);
+      }
+
+      .prize-card .prize-hint {
+        display: none;
+      }
+
+      .place-row {
+        width: 100%;
+        padding: 0;
+        border-right: none;
+        border-bottom: 0.5px solid rgba(100, 150, 220, 0.2);
+        padding-bottom: clamp(8px, 2vw, 12px);
+      }
+
+      .place-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .place-medal {
+        font-size: clamp(14px, 4vw, 18px);
+      }
+
+      .place-label {
+        font-size: clamp(12px, 3.5vw, 14px);
+      }
+
+      .place-amount {
+        font-size: clamp(13px, 3.8vw, 15px);
+      }
+    }
+
     @keyframes slideDown {
       from {
         opacity: 0;
