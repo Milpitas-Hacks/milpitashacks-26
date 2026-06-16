@@ -1237,6 +1237,10 @@ p {
   backface-visibility: hidden;
 }
 
+.card-front h3 {
+  color:#081436;
+}
+
 .card-front img {
   width: 96px;
   height: 96px;
@@ -1249,6 +1253,12 @@ p {
   transform: rotateY(180deg);
   padding: 20px;
   text-align: center;
+}
+
+.card-back .role {
+  color:#192e6d;
+  font-weight: 600;
+  font-size: 0.8vw;
 }
 
 .linkedin-link img {
